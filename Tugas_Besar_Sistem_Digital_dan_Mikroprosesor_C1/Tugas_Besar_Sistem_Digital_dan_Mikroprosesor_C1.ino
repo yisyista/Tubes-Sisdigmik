@@ -1,13 +1,24 @@
+/*EL2142 Sistem Digital dan Mikroprosesor
+ *Modul             : Tugas Besar
+ *Hari dan Tanggal  : 9 Desember 2022
+ *Nama (NIM) 1      : Kayyisa Zahratulfirdaus (18320011)
+ *Nama (NIM) 2      : Namira Husaimah (18319039)
+ *Nama File         : 
+ *Deskripsi         : Program alat bantu jalan untuk tunanetra
+ *                    
+ *                    
+ */
+
 #include <Arduino.h>
 #include "ESP32_MailClient.h"
 #include <WiFi.h>
 #include <TinyGPS++.h>
 #include <SoftwareSerial.h>
 
-const char *SSID = "Moren";
-const char *PWD = "22052001";
+const char *SSID = "Nama Wifi";
+const char *PWD = "Password Wifi";
 #define GMAIL_SMTP_SEVER "smtp.gmail.com"
-#define GMAIL_SMTP_USERNAME "adeliazeta@gmail.com"
+#define GMAIL_SMTP_USERNAME "Alamat Email"
 #define GMAIL_SMTP_PASSWORD "yyvkvlucckfrohjj"
 #define GMAIL_SMTP_PORT 465 
 
@@ -127,7 +138,7 @@ void loop() {
     Serial.println(int(bat_percentage));
 
   
-
+  //Low Battery Notification
   if (battery <= 1.13){
     //Define the email body
     sprintf(body, "<h2>Emergency</h2><br/><p><b>Peringatan! Baterai Habis. Lokasi terakhir di: </b></p><br/><p><b>www.google.com/maps/place/%.14f,%.14f</font></p>", latitude, longitude);
